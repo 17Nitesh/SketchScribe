@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const GameServer = http.createServer(app);
 const io = new Server(GameServer, {
     cors: {
-        origin: '*',
+        origin: process.env.CLIENT_URL || '*' // Allow all origins for now,
     },
     methods: ['GET', 'POST'],
 });
