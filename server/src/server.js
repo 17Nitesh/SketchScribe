@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const GameServer = http.createServer(app);
 const io = new Server(GameServer, {
     cors: {
-        origin: 'https://sketch-scribe.vercel.app/'
+        origin: 'https://sketch-scribe.vercel.app'
     },
     methods: ['GET', 'POST'],
 });
