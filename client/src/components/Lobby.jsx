@@ -9,6 +9,7 @@ const Lobby = ({ setSocket }) => {
 
     const createRoom = () => {
         setSocket(socket);
+        console.log(socket.id);
 
         socket.emit('createGame');
         socket.on('gameCreated', (roomCode) => {
