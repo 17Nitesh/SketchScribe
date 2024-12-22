@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0c1446; /* Deep blue background from palette */
+  background-image: url('./bg.svg');
+  background-repeat: no-repeat; /* Avoid tiling */
+  background-size: cover; /* Make the image cover the entire viewport */
+  background-position: center; /* Center the image */
+  color: #eaeaea; /* Light gray for contrast */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header styles */
+header {
+  background-color: #543cba; /* Purple shade */
+  padding: 20px;
+  color: #f7fafc; /* Light white-gray text */
+  font-size: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #eb008a; /* Bright pink button */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #fb8b24; /* Bright orange for hover */
+  transform: scale(1.05); /* Slight pop-out on hover */
+}
+
+button:active {
+  background-color: #d23d7e; /* Slightly darker pink */
+  transform: scale(1); /* Return to normal scale */
+}
+
+/* Input fields */
+input[type="text"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid #6c63ff; /* Border color from palette */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f0f4f8; /* Subtle off-white background */
+  color: #333; /* Dark gray text */
+}
+
+input[type="text"]:focus {
+  border-color: #eb008a; /* Bright pink focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(235, 0, 138, 0.5); /* Pink glow */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    font-size: 90%;
+  }
+
+  header {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+}

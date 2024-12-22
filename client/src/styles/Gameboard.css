@@ -1,0 +1,438 @@
+/* General layout for Gameboard */
+.gameboard {
+    display: flex;
+    height: 90vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    background-image: url('./bg.svg'); /* Funky background image */
+    background-size: cover; /* Ensure the image covers the full screen */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fix the background while scrolling */
+    background-color: rgba(255, 255, 255, 0.6); /* White overlay with slight transparency */
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    animation: backgroundAnimation 30s infinite linear; /* Add animation to background */
+}
+
+/* Keyframe for background animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: center right;
+    }
+}
+
+/* PlayerList Container */
+.player-list-container {
+    flex: 1;
+    background-color: rgba(0, 123, 255, 0.4); /* Brighter blue for PlayerList */
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    color: #ffffff; /* White text for readability */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Fun, playful font */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Hover effects for PlayerList */
+.player-list-container:hover {
+    background-color: rgba(30, 144, 255, 0.4); /* Brighter hover blue */
+}
+
+/* Styling for PlayerList items with serial numbers */
+.player-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.player-list-container li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #87cefa; /* Light blue divider */
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem; /* Adjust for readability */
+    line-height: 1.5;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.player-list-container li:last-child {
+    border-bottom: none;
+}
+
+.player-list-container li::before {
+    content: counter(item) '.'; 
+    counter-increment: item;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    color: #f0f8ff; /* AliceBlue for serial numbers */
+}
+
+.player-list-container li:hover {
+    background-color: #1e90ff; /* Slightly brighter blue for hover effect */
+    transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Canvas Container */
+.canvas-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(135, 206, 235, 0.4); /* Lighter sky blue for canvas */
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: canvasBgAnimation 25s infinite linear; /* Add animation to canvas background */
+}
+
+/* Keyframe for canvas animation */
+@keyframes canvasBgAnimation {
+    0% {
+        background-color: rgba(135, 206, 235, 0.4);
+    }
+    100% {
+        background-color: rgba(30, 144, 255, 0.4);
+    }
+}
+
+/* ChatBox Container */
+.chat-box-container {
+    overflow-x: hidden;
+    flex: 1;
+    background-color: rgba(0, 122, 255, 0.4); /* Blue for ChatBox */
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    color: #ffffff; /* White text for readability */
+    font-family: 'Comic Sans MS', sans-serif; /* Fun, playful font */
+}
+
+.chat-box-container:hover {
+    background-color: rgba(30, 144, 255, 0.4); /* Slight hover highlight */
+}
+
+/* Buttons or selectable tools inside canvas */
+select {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: #4682b4; /* SteelBlue dropdown button */
+    color: #ffffff; /* White text */
+    border: none;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+select:hover {
+    background-color: #1e90ff; /* Bright blue on hover */
+}
+
+select:active {
+    background-color: #1c6fa1; /* Slightly darker blue when clicked */
+}
+
+select:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px #1e90ff; /* Add custom focus border */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .gameboard {
+        flex-direction: column;
+    }
+
+    .player-list-container,
+    .chat-box-container {
+        flex: unset;
+        width: 100%;
+        height: auto;
+    }
+
+    .canvas-container {
+        flex: unset;
+        height: auto;
+    }
+}
+
+/* Waiting for players section */
+/* Waiting for players section */
+/* General layout for Waiting-for-Players screen */
+.waiting-for-players {
+    display: flex;
+    flex: 1.8;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    width: 100vw; /* Full width, matching gameboard dimensions */
+    background-image: url('./bg.svg'); /* Same background as the gameboard */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.6); /* Matching white overlay */
+    gap: 20px;
+    box-sizing: border-box;
+    animation: backgroundAnimation 30s infinite linear;
+}
+
+/* Loading animation: Three bouncing dots */
+.loading-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 2rem;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: bounce 1.2s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Bounce animation for dots */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Start Game button container */
+.btn-start-game {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-start-game button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-start-game button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-start-game button:active {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-start-game button:disabled {
+    background-color: #a5d6a7;
+    color: #e0e0e0;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+
+.chat-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 65vh;
+    margin-bottom: 10px;
+  }
+  .chat-messages {
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }
+  
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  .chat-messages::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  
+  /* For Firefox */
+  .chat-messages {
+    scrollbar-width: none; /* Hides the scrollbar */
+  }
+  
+  
+  .message {
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .my-message {
+    background-color: #e6f7ff;
+    align-self: flex-end;
+  }
+  
+  .other-message {
+    background-color: #f5f5f5;
+    align-self: flex-start;
+  }
+  
+  .message-sender {
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .message-text {
+    color: blue;
+    margin: 0;
+  }
+  
+  .chat-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .chat-input button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .chat-input button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  /* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 123, 255, 0.6); /* Light blue background */
+    color: #ffffff; /* White text */
+    font-family: 'Comic Sans MS', Arial, sans-serif; /* Fun, playful font */
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */ /* Keeps the header at the top during scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Subtle border for separation */
+}
+
+/* Header Items (Room Code, Round, Timer) */
+.header h1,
+.header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Adds depth to the text */
+}
+
+/* Header Layout Enhancements */
+.header h1 {
+    font-size: 1.6rem; /* Slightly larger for emphasis */
+}
+
+.header h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Responsive Header Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .header h1 {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .header h2 {
+        font-size: 1.1rem;
+    }
+}
+
+.player-list {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.player-items {
+    padding: 0;
+    margin: 0;
+}
+
+.player-item {
+    padding: 0.5rem;
+    display: block; /* Ensures the items are displayed in a block layout */
+    word-wrap: break-word;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+.player-item .username {
+    font-size: 1.2rem; /* Increase the font size */
+    font-weight: bold; /* Make the username bold */
+    color: #00ddff; /* Dark color for visibility */
+    padding-right: 10px;
+}
+
+.player-item .score {
+    font-size: 1rem;
+    color: #cff9ff; /* Lighter color for the score */
+}

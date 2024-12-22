@@ -1,0 +1,113 @@
+/* Universal styles for the lobby */
+.lobby {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #0c1446; /* Deep blue background from palette */
+    background-image: url('./bg.svg');
+    background-repeat: no-repeat; /* Avoid tiling */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    padding: 20px;
+    text-align: center;
+    color: #eaeaea; /* Light gray text for contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+.lobby h1 {
+    font-size: 3rem;
+    color: #f4c430; /* Gold from palette */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #0c1446; /* Shadow effect for better readability */
+}
+
+/* Create Room section */
+.createRoom {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.createRoom button {
+    padding: 10px 20px;
+    background-color: #ffa500; /* Bright orange button */
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.createRoom button:hover {
+    background-color: #ffc107; /* Lighter orange for hover */
+}
+
+/* Displaying room code */
+.roomCode {
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    color: #0c1446; /* Deep blue text */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Join Room section */
+.joinRoom {
+    margin: 20px 0;
+}
+
+.joinRoom input {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.joinRoom input:focus {
+    border-color: #ffa500; /* Orange focus border */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); /* Orange glow */
+}
+
+.joinRoom button {
+    padding: 10px 20px;
+    background-color: #ffa500; /* Orange button */
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.joinRoom button:hover {
+    background-color: #ffc107; /* Lighter orange for hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .lobby h1 {
+        font-size: 2.5rem;
+    }
+
+    .createRoom button,
+    .joinRoom button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .joinRoom input {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,43 @@
+.guessing-container {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.word-to-guess {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 10px;
+  margin-bottom: 15px;
+}
+
+.guess-input {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.guess-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.submit-guess-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-guess-btn:hover {
+  background-color: #0056b3;
+}

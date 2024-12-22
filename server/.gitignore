@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Vercel deployment cache
+.vercel/
+
+# Build directories
+/dist/
+/build/
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# npm package lock file (if you want to ignore)
+# package-lock.json
+
+
+
