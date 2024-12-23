@@ -357,6 +357,7 @@ select:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap:80px;
     width: 100%;
     padding: 1rem 2rem;
     background-color: rgba(0, 123, 255, 0.6); /* Light blue background */
@@ -398,6 +399,7 @@ select:focus {
         justify-content: center; /* Centers content vertically if needed */
         text-align: center; /* Ensures text aligns properly */
         padding: 1rem;
+        gap:10px;
     }
 
     .header h1 {
