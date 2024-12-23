@@ -443,6 +443,6 @@ select:focus {
   height: 60px; /* Set the height */
   width: auto; /* Maintain aspect ratio */
   z-index: 1000; /* Ensure it stays above other elements */
-/*   background: transparent; /* Ensure no background */ */
+/*   background: transparent; /* Ensure no background */ 
 }
 
