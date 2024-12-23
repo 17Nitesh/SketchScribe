@@ -440,9 +440,9 @@ select:focus {
   position: absolute; /* Fix the position */
   top: 10px; /* Adjust for the desired top margin */
   left: 10px; /* Adjust for the desired left margin */
-  height: 50px; /* Set the height */
+  height: 60px; /* Set the height */
   width: auto; /* Maintain aspect ratio */
   z-index: 1000; /* Ensure it stays above other elements */
-  background: transparent; /* Ensure no background */
+/*   background: transparent; /* Ensure no background */ */
 }
 
