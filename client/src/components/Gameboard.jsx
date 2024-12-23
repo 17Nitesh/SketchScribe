@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import Guessing from './Guessing.jsx';
 import { useNavigate } from 'react-router-dom';
+import logo from "%PUBLIC_URL%/logo2.webp";
 const Gameboard = ({ socket }) => {
   const [drawer, setDrawer] = useState({ id: '', username: '' });
   const [gameStarted, setGameStarted] = useState(false);
@@ -127,6 +128,10 @@ const Gameboard = ({ socket }) => {
           pauseOnHover
           theme="light"
         />
+        <div>
+  <img src={logo} alt="Game Logo" className="logo" />
+</div>
+
         <h1>Room Code: {roomCode}</h1>
         <h2>Round: {round}</h2>
         <h2>Time: {timer}</h2>
