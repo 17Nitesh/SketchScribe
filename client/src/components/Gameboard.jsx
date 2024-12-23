@@ -7,7 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import Guessing from './Guessing.jsx';
 import { useNavigate } from 'react-router-dom';
-import logo from "./logo2.webp";
+import logo from "./logo1.webp";
 const Gameboard = ({ socket }) => {
   const [drawer, setDrawer] = useState({ id: '', username: '' });
   const [gameStarted, setGameStarted] = useState(false);
