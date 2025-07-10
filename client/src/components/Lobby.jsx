@@ -34,7 +34,7 @@ const Lobby = ({ setSocket }) => {
     return (
         <div>
             <h1>Lobby</h1>
-            <h1>After clicking on Createroom wait for 50-60 seconds, it's backend is currently running on free tier so it takes time to start for the first time.</h1>
+            <p className="text-red font-bold">(After clicking on Createroom wait for 50-60 seconds, it's backend is currently running on free tier so it takes time to start for the first time.)</p>
             <button onClick={createRoom}>Create Room</button>
             <input
                 type="text"
